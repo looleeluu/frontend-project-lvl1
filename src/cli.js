@@ -5,8 +5,6 @@ const getName = () => {
   return name;
 };
 
-const greetingByName = (name) => {
-  return `Hello, ${name}!`;
-};
+const greetingByName = (name) => `Hello, ${name}!`;
 
 export { getName, greetingByName };
