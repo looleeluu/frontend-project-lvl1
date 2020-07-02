@@ -3,4 +3,5 @@
 
 ![Node CI](https://github.com/looleeluu/frontend-project-lvl1/workflows/Node%20CI/badge.svg?event=push)
 
+brain-even
 [![asciicast](https://asciinema.org/a/4X36R6DuU0HFtcsPZud8BnvsN.svg)](https://asciinema.org/a/4X36R6DuU0HFtcsPZud8BnvsN)
