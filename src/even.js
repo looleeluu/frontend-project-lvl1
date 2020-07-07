@@ -1,4 +1,4 @@
-import getRandomInt from './utility.js';
+import { getRandomInt } from './utility.js';
 
 const isEven = (n) => {
   if (n % 2 === 0) {
