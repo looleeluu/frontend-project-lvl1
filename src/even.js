@@ -1,6 +1,4 @@
-const getRules = () => 'Answer "yes" if the number is even, otherwise answer "no".';
-
-const getRandomInt = () => Math.round(Math.random() * 100);
+import getRandomInt from './utility.js';
 
 const isEven = (n) => {
   if (n % 2 === 0) {
@@ -9,4 +7,15 @@ const isEven = (n) => {
   return false;
 };
 
-export { getRules, getRandomInt, isEven };
+const getEvenRules = () => 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const evenExpression = () => getRandomInt();
+
+const evenCorrectAnswer = (expression) => {
+  if (isEven(expression)) {
+    return 'yes';
+  }
+  return 'no';
+};
+
+export { getEvenRules, evenExpression, evenCorrectAnswer };
