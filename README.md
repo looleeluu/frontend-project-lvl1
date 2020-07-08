@@ -10,4 +10,4 @@
 [![asciicast](https://asciinema.org/a/9RC9j2ixGZbmZwN072FYf8nJL.svg)](https://asciinema.org/a/9RC9j2ixGZbmZwN072FYf8nJL)
 
 ## brain-gcd
-[![asciicast](https://asciinema.org/a/6cR9gi9eBr5UwbxJBPqF7L8CI.svg)](https://asciinema.org/a/6cR9gi9eBr5UwbxJBPqF7L8CI)
+[![asciicast](https://asciinema.org/a/J0xbB9q6zEwSGIJzsMiec3tZH.svg)](https://asciinema.org/a/J0xbB9q6zEwSGIJzsMiec3tZH)
