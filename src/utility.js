@@ -5,4 +5,11 @@ const getRandomMathOperator = () => {
   return operators[getRandomInt(operators.length - 1)];
 };
 
-export { getRandomInt, getRandomMathOperator };
+const getGcd = (m, n) => {
+  if (n === 0) {
+    return m;
+  }
+  return getGcd(n, m % n);
+};
+
+export { getRandomInt, getRandomMathOperator, getGcd };
