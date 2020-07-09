@@ -1,11 +1,4 @@
-import { getRandomInt } from '../utility.js';
-
-const isEven = (n) => {
-  if (n % 2 === 0) {
-    return true;
-  }
-  return false;
-};
+import { getRandomInt, isEven } from '../utility.js';
 
 const evenRules = () => 'Answer "yes" if the number is even, otherwise answer "no".';
 
