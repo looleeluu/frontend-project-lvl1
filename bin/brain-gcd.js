@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 import gameEngine from '../src/index.js';
-import { getGcdRules, gcdExpression, gcdCorrectAnswer } from '../src/gcd.js';
+import { gcdRules, gcdExpressions, gcdCorrectAnswer } from '../src/games/gcd.js';
 
-gameEngine(getGcdRules, gcdExpression, gcdCorrectAnswer);
+gameEngine(gcdRules, gcdExpressions, gcdCorrectAnswer);
