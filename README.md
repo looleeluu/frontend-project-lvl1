@@ -13,4 +13,4 @@
 [![asciicast](https://asciinema.org/a/J0xbB9q6zEwSGIJzsMiec3tZH.svg)](https://asciinema.org/a/J0xbB9q6zEwSGIJzsMiec3tZH)
 
 ## brain-progression
-[![asciicast](https://asciinema.org/a/eVhyHVMEzaX7go5r5L3jbJfml.svg)](https://asciinema.org/a/eVhyHVMEzaX7go5r5L3jbJfml)
+[![asciicast](https://asciinema.org/a/HPcTCFXWfigOQcTl5ivLLFWH8.svg)](https://asciinema.org/a/HPcTCFXWfigOQcTl5ivLLFWH8)
