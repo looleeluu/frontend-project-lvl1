@@ -4,7 +4,7 @@
 ![Node CI](https://github.com/looleeluu/frontend-project-lvl1/workflows/Node%20CI/badge.svg?event=push)
 
 ## brain-even
-[![asciicast](https://asciinema.org/a/11kWoSmJRs9I9RJp7NPxSBZcS.svg)](https://asciinema.org/a/11kWoSmJRs9I9RJp7NPxSBZcS)
+[![asciicast](https://asciinema.org/a/HPcTCFXWfigOQcTl5ivLLFWH8.svg)](https://asciinema.org/a/HPcTCFXWfigOQcTl5ivLLFWH8)
 
 ## brain-calc
 [![asciicast](https://asciinema.org/a/9RC9j2ixGZbmZwN072FYf8nJL.svg)](https://asciinema.org/a/9RC9j2ixGZbmZwN072FYf8nJL)
@@ -13,4 +13,4 @@
 [![asciicast](https://asciinema.org/a/J0xbB9q6zEwSGIJzsMiec3tZH.svg)](https://asciinema.org/a/J0xbB9q6zEwSGIJzsMiec3tZH)
 
 ## brain-progression
-[![asciicast](https://asciinema.org/a/HPcTCFXWfigOQcTl5ivLLFWH8.svg)](https://asciinema.org/a/HPcTCFXWfigOQcTl5ivLLFWH8)
+[![asciicast](https://asciinema.org/a/AdSMetKDo96kKiX8jZW3NY9k3.svg)](https://asciinema.org/a/AdSMetKDo96kKiX8jZW3NY9k3)
