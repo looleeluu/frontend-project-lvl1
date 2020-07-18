@@ -8,9 +8,17 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
+  "engines": {
+    "node": ">=14"
+  },
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "a set of cli games",
+  "author": {
+    "name": "Ilya Sinegubkin",
+    "email": "ilya.sinegubkin@gmail.com"
+  },
+  "keywords": ["cli", "games", "brain-games", "first project"],
+  "main": "./src/index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,7 +27,6 @@
     "type": "git",
     "url": "git+https://github.com/looleeluu/frontend-project-lvl1.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/looleeluu/frontend-project-lvl1/issues"
