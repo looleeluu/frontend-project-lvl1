@@ -1,4 +1,4 @@
-import { getRandomInt, getRandomMathOperator } from '../utility.js';
+import { getRandomInt, getRandomMathOperator } from '../utils.js';
 
 const progressionRules = () => 'What number is missing in the progression?';
 

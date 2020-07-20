@@ -1,4 +1,4 @@
-import { getRandomInt, getRandomMathOperator } from '../utility.js';
+import { getRandomInt, getRandomMathOperator } from '../utils.js';
 
 const calcRules = () => 'What is the result of the expression?';
 

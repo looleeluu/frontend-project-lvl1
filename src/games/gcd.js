@@ -1,4 +1,4 @@
-import { getRandomInt, getGcd } from '../utility.js';
+import { getRandomInt } from '../utils.js';
 
 const gcdRules = () => 'Find the greatest common divisor of given numbers.';
 
@@ -8,6 +8,13 @@ const gcdExpressions = () => {
   const lineToShow = `${a} ${b}`;
   const parameters = [a, b];
   return [lineToShow, parameters];
+};
+
+const getGcd = (m, n) => {
+  if (n === 0) {
+    return m;
+  }
+  return getGcd(n, m % n);
 };
 
 const gcdCorrectAnswer = (expression) => {
