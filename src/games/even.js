@@ -1,11 +1,7 @@
-import { getRandomInt } from '../utils.js';
+import { getRandomInt, gameExpressionOutput } from '../utils.js';
+import gameEngine from '../index.js';
 
 const evenRules = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-const evenExpressions = () => {
-  const number = getRandomInt();
-  return [number];
-};
 
 const isEven = (n) => {
   if (n % 2 === 0) {
@@ -14,11 +10,16 @@ const isEven = (n) => {
   return false;
 };
 
-const evenCorrectAnswer = (expression) => {
-  if (isEven(expression)) {
+const evenExpressions = () => {
+  const number = getRandomInt();
+  gameExpressionOutput(number);
+
+  if (isEven(number)) {
     return 'yes';
   }
   return 'no';
 };
 
-export { evenRules, evenExpressions, evenCorrectAnswer };
+export default () => {
+  gameEngine(evenRules, evenExpressions);
+};

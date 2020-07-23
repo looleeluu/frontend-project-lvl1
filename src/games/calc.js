@@ -1,19 +1,17 @@
-import { getRandomInt, getRandomMathOperator } from '../utils.js';
+import { getRandomInt, getRandomMathOperator, gameExpressionOutput } from '../utils.js';
+import gameEngine from '../index.js';
 
 const calcRules = 'What is the result of the expression?';
+
+const operators = ['+', '-', '*'];
 
 const calcExpressions = () => {
   const a = getRandomInt();
   const b = getRandomInt();
-  const operator = getRandomMathOperator('+', '-', '*');
-
+  const operator = getRandomMathOperator(operators);
   const lineToShow = `${a} ${operator} ${b}`;
-  const parameters = [a, operator, b];
-  return [lineToShow, parameters];
-};
 
-const calcCorrectAnswer = (expression) => {
-  const [a, operator, b] = expression;
+  gameExpressionOutput(lineToShow);
 
   switch (operator) {
     case '+':
@@ -25,4 +23,6 @@ const calcCorrectAnswer = (expression) => {
   }
 };
 
-export { calcRules, calcExpressions, calcCorrectAnswer };
+export default () => {
+  gameEngine(calcRules, calcExpressions);
+};

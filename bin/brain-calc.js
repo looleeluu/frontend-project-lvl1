@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import gameEngine from '../src/index.js';
-import { calcRules, calcCorrectAnswer, calcExpressions } from '../src/games/calc.js';
+import brainCalc from '../src/games/calc.js';
 
-gameEngine(calcRules, calcExpressions, calcCorrectAnswer);
+brainCalc();

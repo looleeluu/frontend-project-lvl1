@@ -1,14 +1,7 @@
-import { getRandomInt } from '../utils.js';
+import { getRandomInt, gameExpressionOutput } from '../utils.js';
+import gameEngine from '../index.js';
 
 const gcdRules = 'Find the greatest common divisor of given numbers.';
-
-const gcdExpressions = () => {
-  const a = getRandomInt();
-  const b = getRandomInt();
-  const lineToShow = `${a} ${b}`;
-  const parameters = [a, b];
-  return [lineToShow, parameters];
-};
 
 const getGcd = (m, n) => {
   if (n === 0) {
@@ -17,9 +10,15 @@ const getGcd = (m, n) => {
   return getGcd(n, m % n);
 };
 
-const gcdCorrectAnswer = (expression) => {
-  const [a, b] = expression;
-  return String(getGcd(a, b));
+const gcdExpressions = () => {
+  const a = getRandomInt(1, 100);
+  const b = getRandomInt(1, 100);
+  const lineToShow = `${a} ${b}`;
+  gameExpressionOutput(lineToShow);
+
+  return getGcd(a, b);
 };
 
-export { gcdRules, gcdExpressions, gcdCorrectAnswer };
+export default () => {
+  gameEngine(gcdRules, gcdExpressions);
+};

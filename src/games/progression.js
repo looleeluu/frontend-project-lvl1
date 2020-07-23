@@ -1,11 +1,14 @@
-import { getRandomInt, getRandomMathOperator } from '../utils.js';
+import { getRandomInt, getRandomMathOperator, gameExpressionOutput } from '../utils.js';
+import gameEngine from '../index.js';
 
 const progressionRules = 'What number is missing in the progression?';
+
+const operators = ['+', '-'];
 
 const progressionExpresssion = () => {
   const firstChar = getRandomInt();
 
-  const step = Number(getRandomMathOperator('+', '-') + getRandomInt(10));
+  const step = Number(getRandomMathOperator(operators) + getRandomInt(1, 10));
 
   const progression = [firstChar];
 
@@ -17,16 +20,14 @@ const progressionExpresssion = () => {
   const removeIndex = getRandomInt(progression.length - 1);
   progression[removeIndex] = '..';
   const lineToShow = progression.join(' ');
+  gameExpressionOutput(lineToShow);
 
-  return [lineToShow, [progression, step, removeIndex]];
-};
-
-const progressionCorrectAnswer = (expression) => {
-  const [progression, step, removeIndex] = expression;
   if (removeIndex === 0) {
     return progression[1] - step;
   }
   return progression[removeIndex - 1] + step;
 };
 
-export { progressionRules, progressionExpresssion, progressionCorrectAnswer };
+export default () => {
+  gameEngine(progressionRules, progressionExpresssion);
+};

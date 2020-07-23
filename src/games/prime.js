@@ -1,11 +1,7 @@
-import { getRandomInt } from '../utils.js';
+import { getRandomInt, gameExpressionOutput } from '../utils.js';
+import gameEngine from '../index.js';
 
 const primeRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
-const primeExpressions = () => {
-  const number = getRandomInt();
-  return [number];
-};
 
 const isPrime = (number) => {
   for (let i = 2; i <= number / 2; i += 1) {
@@ -16,11 +12,16 @@ const isPrime = (number) => {
   return true;
 };
 
-const primeCorrectAnswer = (expression) => {
-  if (isPrime(expression)) {
+const primeExpressions = () => {
+  const number = getRandomInt();
+  gameExpressionOutput(number);
+
+  if (isPrime(number)) {
     return 'yes';
   }
-  return 'no';
+  return 'false';
 };
 
-export { primeRules, primeExpressions, primeCorrectAnswer };
+export default () => {
+  gameEngine(primeRules, primeExpressions);
+};
