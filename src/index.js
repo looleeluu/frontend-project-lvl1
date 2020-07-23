@@ -1,21 +1,27 @@
 import readlineSync from 'readline-sync';
-import { welcome, getName, greetingByName } from './games/cli.js';
 
-export default (getRules, getGameExpression, getCorrectAnswer) => {
-  console.log(welcome());
-  const name = getName();
-  console.log(greetingByName(name));
-  console.log(getRules());
+const numberOfRounds = 3;
+let counter = 0;
 
-  let counter = 0;
-  while (counter !== 3) {
+const greeting = (rules) => {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}`);
+  console.log(rules);
+  return name;
+};
+
+export default (rules, getGameExpression, getCorrectAnswer) => {
+  const name = greeting(rules);
+
+  while (counter !== numberOfRounds) {
     const gameData = getGameExpression();
 
     const expression = gameData[0];
-    const responseData = gameData.length === 1 ? gameData[0]
+    const expressionParameters = gameData.length === 1 ? gameData[0]
       : gameData[1];
 
-    const correctAnswer = getCorrectAnswer(responseData);
+    const correctAnswer = getCorrectAnswer(expressionParameters);
     console.log(`Question: ${expression}`);
 
     const yourAnswer = typeof correctAnswer === 'string'

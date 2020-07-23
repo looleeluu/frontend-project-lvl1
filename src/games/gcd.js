@@ -1,6 +1,6 @@
 import { getRandomInt } from '../utils.js';
 
-const gcdRules = () => 'Find the greatest common divisor of given numbers.';
+const gcdRules = 'Find the greatest common divisor of given numbers.';
 
 const gcdExpressions = () => {
   const a = getRandomInt();

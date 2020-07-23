@@ -1,6 +1,6 @@
 import { getRandomInt } from '../utils.js';
 
-const evenRules = () => 'Answer "yes" if the number is even, otherwise answer "no".';
+const evenRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const evenExpressions = () => {
   const number = getRandomInt();

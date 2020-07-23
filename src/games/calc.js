@@ -1,6 +1,6 @@
 import { getRandomInt, getRandomMathOperator } from '../utils.js';
 
-const calcRules = () => 'What is the result of the expression?';
+const calcRules = 'What is the result of the expression?';
 
 const calcExpressions = () => {
   const a = getRandomInt();
@@ -13,17 +13,16 @@ const calcExpressions = () => {
 };
 
 const calcCorrectAnswer = (expression) => {
-  const a = expression[0];
-  const b = expression[2];
-  const operator = expression[1];
+  const [a, operator, b] = expression;
 
-  if (operator === '+') {
-    return a + b;
+  switch (operator) {
+    case '+':
+      return a + b;
+    case '-':
+      return a - b;
+    default:
+      return a * b;
   }
-  if (operator === '-') {
-    return a - b;
-  }
-  return a * b;
 };
 
 export { calcRules, calcExpressions, calcCorrectAnswer };

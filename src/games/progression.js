@@ -1,6 +1,6 @@
 import { getRandomInt, getRandomMathOperator } from '../utils.js';
 
-const progressionRules = () => 'What number is missing in the progression?';
+const progressionRules = 'What number is missing in the progression?';
 
 const progressionExpresssion = () => {
   const firstChar = getRandomInt();
