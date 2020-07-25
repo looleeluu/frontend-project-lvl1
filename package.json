@@ -17,7 +17,12 @@
     "name": "Ilya Sinegubkin",
     "email": "ilya.sinegubkin@gmail.com"
   },
-  "keywords": ["cli", "games", "brain-games", "first project"],
+  "keywords": [
+    "cli",
+    "games",
+    "brain-games",
+    "first project"
+  ],
   "main": "./src/index.js",
   "type": "module",
   "repository": {
