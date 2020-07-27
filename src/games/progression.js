@@ -1,33 +1,35 @@
-import { getRandomInt, getRandomMathOperator, gameExpressionOutput } from '../utils.js';
-import gameEngine from '../index.js';
+import getRandomInt from '../utils.js';
+import startGameEngine from '../index.js';
 
-const progressionRules = 'What number is missing in the progression?';
+const ROUNDS_COUNT = 3;
+const PROGRESSION_LENGTH = 9;
+const HIDE_MARKER = '..';
 
-const operators = ['+', '-'];
+const gameDescription = 'What number is missing in the progression?';
 
-const progressionExpresssion = () => {
-  const firstChar = getRandomInt();
+const getRoundData = () => {
+  const firstNumber = getRandomInt(-100, 100);
+  const step = getRandomInt(-10, 10);
+  const progression = [firstNumber];
 
-  const step = Number(getRandomMathOperator(operators) + getRandomInt(1, 10));
-
-  const progression = [firstChar];
-
-  for (let i = 0; i < 9; i += 1) {
-    const newChar = progression[progression.length - 1] + step;
-    progression.push(newChar);
+  for (let i = 0; i < PROGRESSION_LENGTH; i += 1) {
+    const nextNumber = progression[progression.length - 1] + step;
+    progression.push(nextNumber);
   }
 
-  const removeIndex = getRandomInt(progression.length - 1);
-  progression[removeIndex] = '..';
-  const lineToShow = progression.join(' ');
-  gameExpressionOutput(lineToShow);
+  const hiddenNumberIndex = getRandomInt(0, progression.length - 1);
+  progression[hiddenNumberIndex] = HIDE_MARKER;
 
-  if (removeIndex === 0) {
-    return progression[1] - step;
-  }
-  return progression[removeIndex - 1] + step;
+  const answer = hiddenNumberIndex === 0
+    ? progression[1] - step
+    : progression[hiddenNumberIndex - 1] + step;
+
+  return {
+    question: progression.join(' '),
+    correctAnswer: String(answer),
+  };
 };
 
 export default () => {
-  gameEngine(progressionRules, progressionExpresssion);
+  startGameEngine(ROUNDS_COUNT, gameDescription, getRoundData);
 };

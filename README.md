@@ -12,7 +12,7 @@
 $ git clone https://github.com/looleeluu/frontend-project-lvl1.git
 $ cd frontend-project-lvl1/
 $ make install
-$ npm link
+$ make link
 ```
 
 ## brain-even

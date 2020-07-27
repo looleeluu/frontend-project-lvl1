@@ -1,25 +1,21 @@
-import { getRandomInt, gameExpressionOutput } from '../utils.js';
-import gameEngine from '../index.js';
+import getRandomInt from '../utils.js';
+import startGameEngine from '../index.js';
 
-const evenRules = 'Answer "yes" if the number is even, otherwise answer "no".';
+const ROUNDS_COUNT = 3;
 
-const isEven = (n) => {
-  if (n % 2 === 0) {
-    return true;
-  }
-  return false;
-};
+const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const evenExpressions = () => {
+const isEven = (n) => n % 2 === 0;
+
+const getRoundData = () => {
   const number = getRandomInt();
-  gameExpressionOutput(number);
 
-  if (isEven(number)) {
-    return 'yes';
-  }
-  return 'no';
+  return {
+    question: `${number}`,
+    correctAnswer: isEven(number) ? 'yes' : 'no',
+  };
 };
 
 export default () => {
-  gameEngine(evenRules, evenExpressions);
+  startGameEngine(ROUNDS_COUNT, gameDescription, getRoundData);
 };

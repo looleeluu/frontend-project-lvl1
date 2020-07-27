@@ -1,7 +1,9 @@
-import { getRandomInt, gameExpressionOutput } from '../utils.js';
-import gameEngine from '../index.js';
+import getRandomInt from '../utils.js';
+import startGameEngine from '../index.js';
 
-const primeRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const ROUNDS_COUNT = 3;
+
+const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
   for (let i = 2; i <= number / 2; i += 1) {
@@ -12,16 +14,15 @@ const isPrime = (number) => {
   return true;
 };
 
-const primeExpressions = () => {
+const getRoundData = () => {
   const number = getRandomInt();
-  gameExpressionOutput(number);
 
-  if (isPrime(number)) {
-    return 'yes';
-  }
-  return 'false';
+  return {
+    question: `${number}`,
+    correctAnswer: isPrime(number) ? 'yes' : 'no',
+  };
 };
 
 export default () => {
-  gameEngine(primeRules, primeExpressions);
+  startGameEngine(ROUNDS_COUNT, gameDescription, getRoundData);
 };

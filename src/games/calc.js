@@ -1,28 +1,31 @@
-import { getRandomInt, getRandomMathOperator, gameExpressionOutput } from '../utils.js';
-import gameEngine from '../index.js';
+import getRandomInt from '../utils.js';
+import startGameEngine from '../index.js';
 
-const calcRules = 'What is the result of the expression?';
+const ROUNDS_COUNT = 3;
+const OPERATORS = ['+', '-', '*'];
 
-const operators = ['+', '-', '*'];
+const getRandomMathOperator = (operators) => operators[getRandomInt(0, operators.length - 1)];
 
-const calcExpressions = () => {
+const gameDescription = 'What is the result of the expression?';
+
+const getRoundData = () => {
   const a = getRandomInt();
   const b = getRandomInt();
-  const operator = getRandomMathOperator(operators);
-  const lineToShow = `${a} ${operator} ${b}`;
+  const operator = getRandomMathOperator(OPERATORS);
+  const operation = {
+    '+': (firstOperand, secondOperand) => firstOperand + secondOperand,
+    '-': (firstOperand, secondOperand) => firstOperand - secondOperand,
+    '*': (firstOperand, secondOperand) => firstOperand * secondOperand,
+  };
 
-  gameExpressionOutput(lineToShow);
+  const calculateOperation = operation[operator];
 
-  switch (operator) {
-    case '+':
-      return a + b;
-    case '-':
-      return a - b;
-    default:
-      return a * b;
-  }
+  return {
+    question: `${a} ${operator} ${b}`,
+    correctAnswer: String(calculateOperation(a, b)),
+  };
 };
 
 export default () => {
-  gameEngine(calcRules, calcExpressions);
+  startGameEngine(ROUNDS_COUNT, gameDescription, getRoundData);
 };
