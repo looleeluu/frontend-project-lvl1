@@ -18,24 +18,24 @@ $ make link
 ## brain-even
 `$ brain-even`
 
-[![asciicast](https://asciinema.org/a/348315.svg)](https://asciinema.org/a/348315)
+[![asciicast](https://asciinema.org/a/350028.svg)](https://asciinema.org/a/350028)
 
 ## brain-calc
 `$ brain-calc`
 
-[![asciicast](https://asciinema.org/a/348314.svg)](https://asciinema.org/a/348314)
+[![asciicast](https://asciinema.org/a/350029.svg)](https://asciinema.org/a/350029)
 
 ## brain-gcd
 `$ brain-gcd`
 
-[![asciicast](https://asciinema.org/a/348316.svg)](https://asciinema.org/a/348316)
+[![asciicast](https://asciinema.org/a/350030.svg)](https://asciinema.org/a/350030)
 
 ## brain-progression
 `$ brain-progression`
 
-[![asciicast](https://asciinema.org/a/348318.svg)](https://asciinema.org/a/348318)
+[![asciicast](https://asciinema.org/a/350031.svg)](https://asciinema.org/a/350031)
 
 ## brain-prime
 `$ brain-prime`
 
-[![asciicast](https://asciinema.org/a/348319.svg)](https://asciinema.org/a/348319)
+[![asciicast](https://asciinema.org/a/350032.svg)](https://asciinema.org/a/350032)
