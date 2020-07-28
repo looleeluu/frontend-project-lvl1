@@ -1,7 +1,5 @@
-import getRandomInt from '../utils.js';
-import startGameEngine from '../index.js';
-
-const ROUNDS_COUNT = 3;
+import { getRandomInt } from '../utils.js';
+import startGameEngine, { ROUNDS_COUNT } from '../index.js';
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -14,7 +12,7 @@ const isPrime = (number) => {
   return true;
 };
 
-const getRoundData = () => {
+const getQuestionAndAnswer = () => {
   const number = getRandomInt();
 
   return {
@@ -24,5 +22,5 @@ const getRoundData = () => {
 };
 
 export default () => {
-  startGameEngine(ROUNDS_COUNT, gameDescription, getRoundData);
+  startGameEngine(ROUNDS_COUNT, gameDescription, getQuestionAndAnswer);
 };

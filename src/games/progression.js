@@ -1,13 +1,12 @@
-import getRandomInt from '../utils.js';
-import startGameEngine from '../index.js';
+import { getRandomInt } from '../utils.js';
+import startGameEngine, { ROUNDS_COUNT } from '../index.js';
 
-const ROUNDS_COUNT = 3;
 const PROGRESSION_LENGTH = 9;
 const HIDE_MARKER = '..';
 
 const gameDescription = 'What number is missing in the progression?';
 
-const getRoundData = () => {
+const getProgression = () => {
   const firstNumber = getRandomInt(-100, 100);
   const step = getRandomInt(-10, 10);
   const progression = [firstNumber];
@@ -17,12 +16,16 @@ const getRoundData = () => {
     progression.push(nextNumber);
   }
 
-  const hiddenNumberIndex = getRandomInt(0, progression.length - 1);
-  progression[hiddenNumberIndex] = HIDE_MARKER;
+  return progression;
+};
 
-  const answer = hiddenNumberIndex === 0
-    ? progression[1] - step
-    : progression[hiddenNumberIndex - 1] + step;
+const getQuestionAndAnswer = () => {
+  const progression = getProgression();
+
+  const hiddenNumberIndex = getRandomInt(0, progression.length - 1);
+  const answer = progression[hiddenNumberIndex];
+
+  progression[hiddenNumberIndex] = HIDE_MARKER;
 
   return {
     question: progression.join(' '),
@@ -31,5 +34,5 @@ const getRoundData = () => {
 };
 
 export default () => {
-  startGameEngine(ROUNDS_COUNT, gameDescription, getRoundData);
+  startGameEngine(ROUNDS_COUNT, gameDescription, getQuestionAndAnswer);
 };

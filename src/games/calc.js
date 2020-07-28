@@ -1,31 +1,30 @@
-import getRandomInt from '../utils.js';
-import startGameEngine from '../index.js';
+import { getRandomInt } from '../utils.js';
+import startGameEngine, { ROUNDS_COUNT } from '../index.js';
 
-const ROUNDS_COUNT = 3;
 const OPERATORS = ['+', '-', '*'];
 
 const getRandomMathOperator = (operators) => operators[getRandomInt(0, operators.length - 1)];
 
 const gameDescription = 'What is the result of the expression?';
 
-const getRoundData = () => {
-  const a = getRandomInt();
-  const b = getRandomInt();
-  const operator = getRandomMathOperator(OPERATORS);
-  const operation = {
-    '+': (firstOperand, secondOperand) => firstOperand + secondOperand,
-    '-': (firstOperand, secondOperand) => firstOperand - secondOperand,
-    '*': (firstOperand, secondOperand) => firstOperand * secondOperand,
-  };
+const mapSmthToSmth = {
+  '+': (firstOperand, secondOperand) => firstOperand + secondOperand,
+  '-': (firstOperand, secondOperand) => firstOperand - secondOperand,
+  '*': (firstOperand, secondOperand) => firstOperand * secondOperand,
+};
 
-  const calculateOperation = operation[operator];
+const getQuestionAndAnswer = () => {
+  const firstOperand = getRandomInt();
+  const secondOperand = getRandomInt();
+  const operator = getRandomMathOperator(OPERATORS);
+  const calculateOperation = mapSmthToSmth[operator];
 
   return {
-    question: `${a} ${operator} ${b}`,
-    correctAnswer: String(calculateOperation(a, b)),
+    question: `${firstOperand} ${operator} ${secondOperand}`,
+    correctAnswer: String(calculateOperation(firstOperand, secondOperand)),
   };
 };
 
 export default () => {
-  startGameEngine(ROUNDS_COUNT, gameDescription, getRoundData);
+  startGameEngine(ROUNDS_COUNT, gameDescription, getQuestionAndAnswer);
 };
