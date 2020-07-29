@@ -18,6 +18,4 @@ const getQuestionAndAnswer = () => {
   };
 };
 
-export default () => {
-  startGameEngine(ROUNDS_COUNT, gameDescription, getQuestionAndAnswer);
-};
+export default () => startGameEngine(ROUNDS_COUNT, gameDescription, getQuestionAndAnswer);
