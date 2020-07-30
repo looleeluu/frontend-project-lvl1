@@ -6,9 +6,7 @@ const HIDE_MARKER = '..';
 
 const gameDescription = 'What number is missing in the progression?';
 
-const getProgression = () => {
-  const firstNumber = getRandomInt(-100, 100);
-  const step = getRandomInt(-10, 10);
+const getProgression = (firstNumber, step) => {
   const progression = [firstNumber];
 
   for (let i = 0; i < PROGRESSION_LENGTH; i += 1) {
@@ -19,8 +17,11 @@ const getProgression = () => {
   return progression;
 };
 
-const getQuestionAndAnswer = () => {
-  const progression = getProgression();
+const getRound = () => {
+  const firstNumber = getRandomInt(-100, 100);
+  const step = getRandomInt(-10, 10);
+
+  const progression = getProgression(firstNumber, step);
 
   const hiddenNumberIndex = getRandomInt(0, progression.length - 1);
   const answer = progression[hiddenNumberIndex];
@@ -33,4 +34,4 @@ const getQuestionAndAnswer = () => {
   };
 };
 
-export default () => startGameEngine(ROUNDS_COUNT, gameDescription, getQuestionAndAnswer);
+export default () => startGameEngine(ROUNDS_COUNT, gameDescription, getRound);

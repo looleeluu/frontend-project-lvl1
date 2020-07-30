@@ -12,13 +12,13 @@ const isPrime = (number) => {
   return true;
 };
 
-const getQuestionAndAnswer = () => {
+const getRound = () => {
   const number = getRandomInt();
 
   return {
-    question: `${number}`,
+    question: String(number),
     correctAnswer: isPrime(number) ? 'yes' : 'no',
   };
 };
 
-export default () => startGameEngine(ROUNDS_COUNT, gameDescription, getQuestionAndAnswer);
+export default () => startGameEngine(ROUNDS_COUNT, gameDescription, getRound);

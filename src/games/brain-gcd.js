@@ -9,13 +9,13 @@ const getGcd = (firstNumber, secondNumber) => {
   return answer;
 };
 
-const getQuestionAndAnswer = () => {
-  const a = getRandomInt(1, 100);
-  const b = getRandomInt(1, 100);
+const getRound = () => {
+  const firstNumber = getRandomInt(1, 100);
+  const secondNumber = getRandomInt(1, 100);
   return {
-    question: `${a} ${b}`,
-    correctAnswer: String(getGcd(a, b)),
+    question: `${firstNumber} ${secondNumber}`,
+    correctAnswer: String(getGcd(firstNumber, secondNumber)),
   };
 };
 
-export default () => startGameEngine(ROUNDS_COUNT, gameDescription, getQuestionAndAnswer);
+export default () => startGameEngine(ROUNDS_COUNT, gameDescription, getRound);

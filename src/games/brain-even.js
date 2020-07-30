@@ -5,7 +5,7 @@ const gameDescription = 'Answer "yes" if the number is even, otherwise answer "n
 
 const isEven = (number) => number % 2 === 0;
 
-const getQuestionAndAnswer = () => {
+const getRound = () => {
   const number = getRandomInt();
 
   return {
@@ -14,4 +14,4 @@ const getQuestionAndAnswer = () => {
   };
 };
 
-export default () => startGameEngine(ROUNDS_COUNT, gameDescription, getQuestionAndAnswer);
+export default () => startGameEngine(ROUNDS_COUNT, gameDescription, getRound);
