@@ -7,7 +7,7 @@ const getRandomMathOperator = (operators) => operators[getRandomInt(0, operators
 
 const gameDescription = 'What is the result of the expression?';
 
-const mapOperationWithOperands = {
+const mapOperatorToOperation = {
   '+': (firstOperand, secondOperand) => firstOperand + secondOperand,
   '-': (firstOperand, secondOperand) => firstOperand - secondOperand,
   '*': (firstOperand, secondOperand) => firstOperand * secondOperand,
@@ -17,7 +17,7 @@ const getRound = () => {
   const firstOperand = getRandomInt();
   const secondOperand = getRandomInt();
   const operator = getRandomMathOperator(OPERATORS);
-  const calculateOperation = mapOperationWithOperands[operator];
+  const calculateOperation = mapOperatorToOperation[operator];
 
   return {
     question: `${firstOperand} ${operator} ${secondOperand}`,
